@@ -130,4 +130,4 @@ alert tcp $EXTERNAL_NET any -> $HOME_NET 3399
 规则一和规则二分别写为：
 
 * log tcp $EXTERNAL_NET any -> $HOME_NET 3399 (pcre: "/login\|Initial/"; flowbits: set, QAQ_Attack_Is_Coming; sid: 114514)
-* log tcp $EXTERNAL_NET any -> $HOME_NET 3399 (msg: "bot founded"; pcre: "/(2\[0-5\]\[0-5\]|1\d{2}|\[1-9\]\d|\d\\.){3}(2\[0-5\]\[0-5\]|1\d{2}|\[1-9\]\d|\d):(6[0-5\]{2}\[0-3\]\[0-5\]|\[1-5\]\d{4}|\[1-9\]\d{1,3}|\d)/"; flowbits: isset, QAQ_Attack_Is_Coming; sid: 1000001)
+* log tcp $EXTERNAL_NET any -> $HOME_NET 3399 (msg: "bot founded"; pcre: "/(2\[0-5\]\[0-5\]|1\d{2}|\[1-9\]\d|\d)(\\.(2\[0-5\]\[0-5\]|1\d{2}|\[1-9\]\d|\d)){3}:(6[0-5\]{2}\[0-3\]\[0-5\]|\[1-5\]\d{4}|\[1-9\]\d{1,3}|\d)/"; flowbits: isset, QAQ_Attack_Is_Coming; sid: 1000001)
